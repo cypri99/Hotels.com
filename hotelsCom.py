@@ -54,6 +54,7 @@ def check_coupon_validity(driver, code, voucher):
 		driver.find_element_by_xpath('//*[@id="coupon-code-remove-btn"]').click()
 		store_voucher(voucher)
 	except:
+		print(Fore.RED + '[i] INVALID VOUCHER [%s]' % voucher)
 		time.sleep(3)
 		driver.find_element_by_xpath('//*[@id="coupon-code-error-message"]/em').click()
 		driver.find_element_by_xpath('//*[@id="coupon-code-field"]').clear()
